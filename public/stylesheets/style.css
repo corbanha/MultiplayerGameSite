@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: azure;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-container {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
+  border: 1px solid black;
+  outline: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1em;
+}
+
+.form-header {
+  font-family: cursive;
+  font-size: 24pt;
+  color: green;
+}
+
+input {
+  margin: 5px;
+}
+
+a {
+  margin: 5px;
+  color: red;
+}
+
+a:hover {
+  font-size: 24pt;
+  margin: 5px;
+}
+
+input[type="submit"] {
+  padding: 5px;
+}
