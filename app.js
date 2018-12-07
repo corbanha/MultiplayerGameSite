@@ -5,29 +5,28 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
-var mongoStore = require('connect-mongo')({ session: expressSession });
+var mongoStore = require('connect-mongo')({session: expressSession});
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/auth', { useNewUrlParser: true });
 require('./models/users_model.js');
 var db = mongoose.connection; //Saves the connection as a variable to use
 db.on('error', console.error.bind(console, 'connection error:')); //Checks for connection errors
 db.once('open', function() { //Lets us know when we're connected
-  console.log('Connected');
+    console.log('Connected');
 });
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-//here's some information for our cookies which we will store inside our mongoose database
 var app = express();
 app.use(expressSession({
   secret: 'SECRET',
-  cookie: { maxAge: 2628000000 }, //this maxAge is how long the cookie will stay alive
+  cookie: {maxAge:2628000000},
   resave: true,
   saveUninitialized: true,
   store: new mongoStore({
-    mongooseConnection: mongoose.connection
-  })
-}));
+      mongooseConnection:mongoose.connection
+    })
+  }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

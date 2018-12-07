@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('cs260-lab-6-auth:server');
+var debug = require('debug')('cs260-auth-lab:server');
 var http = require('http');
 
 /**
@@ -13,7 +13,8 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
-console.log("Started on port " + port);
+port = 4200;
+console.log("Started the Creative Lab on Port " + port);
 app.set('port', port);
 
 /**
